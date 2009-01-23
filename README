@@ -1,0 +1,8 @@
+Browsershame will make public the resource usage of popular web
+browsers, collected from users across the internet. Browsershame is a
+Django-powered website with a read-write REST API, and several client
+programs for various platforms and browsers.
+
+Actually, currently it's none of those things. But it will be.
+
+~ dcrosta
