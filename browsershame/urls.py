@@ -5,7 +5,14 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('browsershame.api.views',
-    (r'^api/browser/get/(?P<name>[^/]+)', 'get_browser', {'major':None, 'minor':None, 'tick':None}),
+    (r'^get/browser/(?P<name>[^/]+)/(?P<major>[^/]+)/(?P<minor>[^/]+)/(?P<tick>[^/]+)', 'get_browser'),
+    (r'^get/browser/(?P<name>[^/]+)/(?P<major>[^/]+)/(?P<minor>[^/]+)', 'get_browser', {'tick':None}),
+    (r'^get/browser/(?P<name>[^/]+)/(?P<major>[^/]+)', 'get_browser', {'minor':None, 'tick':None}),
+
+    (r'^list/browser/(?P<name>[^/]+)/(?P<major>[^/]+)/(?P<minor>[^/]+)/(?P<tick>[^/]+)', 'list_browsers'),
+    (r'^list/browser/(?P<name>[^/]+)/(?P<major>[^/]+)/(?P<minor>[^/]+)', 'list_browsers', {'tick':None}),
+    (r'^list/browser/(?P<name>[^/]+)/(?P<major>[^/]+)', 'list_browsers', {'minor':None, 'tick':None}),
+    (r'^list/browser/(?P<name>[^/]+)', 'list_browsers', {'name':None, 'minor':None, 'tick':None}),
 
 )
 
